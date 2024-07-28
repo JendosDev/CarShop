@@ -22,11 +22,11 @@ public class VehicleController {
         return "index";
     }
 
-    @GetMapping(value = "/add-new-car")
+    @GetMapping(value = "/add")
     public String addNewVehicle(Model model) throws SQLException {
         Vehicle vehicle = new Vehicle();
         model.addAttribute("vehicle", vehicle);
-        return "newvehicle";
+        return "newVehicle";
     }
 
     @PostMapping(value = "/save")

@@ -6,10 +6,9 @@
 </head>
 <body>
 <div align="center">
-    <h1>Mercedes | List of vehicles</h1>
-
+    <h1>Car Seller | List of Vehicles</h1>
     <table border="5px solid">
-        <tr>
+        <tr style="padding: 5px 10px">
             <th>BRAND</th>
             <th>MODEL</th>
             <th>SPZ</th>
@@ -17,25 +16,17 @@
             <th>YEAR</th>
         </tr>
 
-        <tr th:each="vehicle:${allcarlist}">
+        <tr th:each="vehicle:${allcarlist}" style="padding: 5px 10px">
             <td th:text="${vehicle.brand}"></td>
             <td th:text="${vehicle.vehicleModel}"></td>
             <td th:text="${vehicle.SPZ}"></td>
             <td th:text="${vehicle.price}"></td>
-            <td th:text="${vehicle.year}"></td>
-
+            <td>
+                <span th:if="${vehicle.year > 2020}" th:text="${vehicle.year}" style="color: green"></span>
+                <span th:unless="${vehicle.year > 2020}" th:text="${vehicle.year}" style="color: red"></span>
+            </td>
         </tr>
-
-
-
     </table>
-
-
-
-
-
-
-
 </div>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Create new Vehicle</h1>
+
+    <form action="#" th:action="@{/save}" th:object="${vehicle}" method="post">
+        <input type="text" th:field="*{brand}" placeholder="Vehicle Brand">
+        <input type="text" th:field="*{model}" placeholder="Vehicle Model">
+        <input type="text" th:field="*{SPZ}" placeholder="Vehicle SPZ">
+
+        <button type="button">Save Vehicle</button>
+    </form>
+
+    <hr>
+    <a href="@{/}">Back to Vehicle list</a>
+</body>
+</html>
